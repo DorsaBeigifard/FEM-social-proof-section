@@ -1,0 +1,306 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.clearfix::after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+:root {
+  /* Primary Colors */
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  /* Neutral Colors */
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  /* Font */
+  --body-text: 1.7rem;
+}
+html {
+  font-size: 62.5%;
+}
+
+@font-face {
+  font-family: "League Spartan", sans-serif;
+  src: url(../fonts/LeagueSpartan.ttf);
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+/* fonts  */
+
+body {
+  font-family: "League Spartan";
+  font-weight: 400;
+  font-size: var(--body-text);
+  position: relative;
+  margin-bottom: 40px;
+}
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 11px;
+  padding: 1rem 0;
+  width: 100%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.bg-image {
+  background-image: url(../images/bg-pattern-top-mobile.svg),
+    url(../images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
+  background-size: auto, 100%;
+  background-color: var(--white);
+}
+
+.panel {
+  height: 100vh;
+  max-width: 80%;
+  margin: auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 8rem 0;
+}
+
+/* heading */
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.main-title {
+  font-size: clamp(1rem, (1rem + 2.6vw), 4rem);
+  letter-spacing: 0.03em;
+  line-height: 1.8em;
+  color: var(--very-dark-magenta);
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.sub-title {
+  color: var(--dark-grayish-magenta);
+  line-height: 1.5em;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+/* rates  */
+
+.rates {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+
+.rate {
+  background-color: var(--light-grayish-magenta);
+  color: var(--very-dark-magenta);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+/* reviews  */
+.reviews {
+  line-height: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.review {
+  padding: 3rem;
+  background-color: var(--very-dark-magenta);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 10px;
+}
+.user img {
+  float: left;
+  margin-right: 2rem;
+  border-radius: 50%;
+  width: 50px;
+}
+.user {
+  color: var(--soft-pink);
+  font-weight: 400;
+}
+.user > p:first-of-type {
+  color: var(--white);
+  font-weight: 700;
+}
+.comment {
+  color: var(--light-grayish-magenta);
+}
+
+@media (min-width: 990px) and (max-width: 1479px) {
+  .bg-image {
+    background-image: url(../images/bg-pattern-top-desktop.svg),
+      url(../images/bg-pattern-bottom-desktop.svg);
+    height: 100vh;
+  }
+
+  /* panel */
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "top"
+      "review";
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    margin-top: 6rem;
+  }
+  .top-grid {
+    grid-area: top;
+    display: grid;
+    grid-template-areas:
+      "title rates"
+      "title rates";
+    grid-template-columns: 30rem 40rem;
+    column-gap: 15vw;
+  }
+  /* title  */
+  .title {
+    width: clamp(5rem, (10rem + 25vw), 90rem);
+    grid-area: title;
+    text-align: left;
+  }
+
+  .main-title {
+    font-size: clamp(0.7rem, (0.5rem + 2vw), 3rem);
+  }
+
+  /* rates  */
+  .rates {
+    grid-area: rates;
+    position: relative;
+    top: 40px;
+  }
+  .rate {
+    width: clamp(5rem, (10rem + 25vw), 90rem);
+  }
+  .rate2 {
+    position: relative;
+    left: 2vw;
+  }
+
+  .rate3 {
+    position: relative;
+    left: 6vw;
+  }
+
+  .stars {
+    float: left;
+  }
+
+  /* reviews  */
+  .reviews {
+    grid-area: review;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .review2 {
+    position: relative;
+    top: 20px;
+  }
+
+  .review3 {
+    position: relative;
+    top: 40px;
+  }
+}
+/* mobile first approach  */
+@media (min-width: 1480px) {
+  .bg-image {
+    background-image: url(../images/bg-pattern-top-desktop.svg),
+      url(../images/bg-pattern-bottom-desktop.svg);
+    height: 100vh;
+  }
+
+  /* panel */
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "top"
+      "review";
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    margin-top: 6rem;
+  }
+  .top-grid {
+    grid-area: top;
+    display: grid;
+    grid-template-areas:
+      "title rates"
+      "title rates";
+    grid-template-columns: 40rem 48rem;
+    gap: 20rem;
+  }
+  /* title  */
+  .title {
+    grid-area: title;
+    text-align: left;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  /* rates  */
+  .rates {
+    grid-area: rates;
+    position: relative;
+    top: 40px;
+  }
+
+  .rate2 {
+    position: relative;
+    left: 60px;
+  }
+
+  .rate3 {
+    position: relative;
+    left: 120px;
+  }
+
+  .stars {
+    float: left;
+  }
+
+  /* reviews  */
+  .reviews {
+    grid-area: review;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .review2 {
+    position: relative;
+    top: 20px;
+  }
+
+  .review3 {
+    position: relative;
+    top: 40px;
+  }
+}
