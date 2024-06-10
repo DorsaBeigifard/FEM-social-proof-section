@@ -23,7 +23,7 @@ Users should be able to:
 ### Screenshot
 
 ![Screenshot Desktop](./screenshot-desktop.png)
-![Screenshot Mobile](./screenshot-mobile.png)
+![Screenshot Mobile](./screenshot-mobile.png){:height="300px"}
 
 ### Links
 
