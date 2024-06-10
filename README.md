@@ -48,5 +48,5 @@ Exploring CSS Grid and Flexbox was surprisingly enjoyable – it was like playin
 
 Along the way, I stumbled upon clamp() and discovered how it could enhance responsiveness. Integrating it with the vw unit allowed me to witness the webpage adapt seamlessly to dynamic resizing.
 
-At the end, seeing everything come together in the end was totally worth it!
+At the end, seeing everything come together was totally worth it!
 I can't wait to learn more and do more challenging projects.
